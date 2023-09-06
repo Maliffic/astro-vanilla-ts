@@ -9,6 +9,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   overrides: [
+
     {
       files: ['*.astro'],
       rules: {
@@ -43,7 +44,9 @@ module.exports = {
           'error',
           { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' }
         ],
-        '@typescript-eslint/no-non-null-assertion': 'off'
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        "linebreak-style": process.env.NODE_ENV === 'prod' ? "unix" : "windows"
+
       }
     },
     {
